@@ -722,15 +722,38 @@
 
                 <div id="performanceRating" class="text-center p-3 rounded-lg" style="background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2);"></div>
               </div>
-
               <button class="nav-btn fade-in fade-in-d3" onclick="goToPage(0)">🔄 إعادة الرحلة</button>
+              <button class="nav-btn fade-in fade-in-d3" onclick="goToPage(13)">🔄 التحدي الاكبر</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+ <div class="page bg-grid" data-page="13">
+          <div class="flex-1 p-6 md:p-10 overflow-y-auto">
+            <div class="max-w-2xl mx-auto">
+              <h2 class="text-2xl font-black neon-text mb-6 fade-in" style="font-family: 'Readex Pro', sans-serif;">✨ تعليمات التحدي الأكبر ✨</h2>
+              <div class="glow-card p-6 mb-4 fade-in fade-in-d1">
+                <ul class="space-y-3 text-sm" style="color: #475569; line-height: 1.8;">
+               <li class="flex items-start gap-2"><span style="color: #2563eb; font-weight: 700;">①</span>	انقر على زر "التحدي الأكبر"  للانتقال إلى صفحة التحدي </li>
+                  <li class="flex items-start gap-2"><span style="color: #2563eb; font-weight: 700;">②</span> اكتب اسمك بشكل صحيح  ثم قم بالنقر على زر "Start"  لبدء الاختبار </li>
+                  <li class="flex items-start gap-2"><span style="color: #2563eb; font-weight: 700;">③</span> يتكون الاختبار من 6  أسئلة اختيار من متعدد،  يمكنك التنقل بين الأسئلة</li>
+                  <li class="flex items-start gap-2"><span style="color: #2563eb; font-weight: 700;">④</span> 	⚠️ لا يمكن الخروج من صفحة الاختبار بعد البدء، لذا تأكد من جاهزيتك قبل الضغط على Start </li>  
+                  <li class="flex items-start gap-2"><span style="color: #2563eb; font-weight: 700;">⑤</span> تأكد من مراجعة إجاباتك جيدا </li>
+                  <li class="flex items-start gap-2"><span style="color: #2563eb; font-weight: 700;">⑥</span> 8.	اضغط على زر "Submit" لإرسال الإجابات. </li>
+                </ul>
+                   <h3 class="font-bold mb-3" style="color: #2563eb;">
+🏆 سيتم الإعلان عن الفائزين في التحدي الأكبر قريبًا… بالتوفيق 🌟</h3>
+              </div>
+              <div class="flex justify-between mt-8">
+                <button class="nav-btn" onclick="goToPage(0)"> المحطة السابقة ⟶</button>
+             <button class="nav-btn" onclick="window.open('https://wayground.com/join?gc=20135745&source=liveDashboard', '_blank')"> التحدي الاكبر</button>              </div>
+            </div>
+          </div>
+        </div>
 
+        
   <script>
     const defaultConfig = {
       student_name: 'شيخة سعيد العلوية',
@@ -740,8 +763,8 @@
 
     let currentPage = 0;
     let totalScore = 0;
-    const totalPages = 12;
-    const pageNames = ['البداية', 'دليل الرحلة', 'لقاء الرحلة', 'الانطلاقة', 'اهداف الرحلة', 'اجهزة الإدخال', 'اجهزة الإخراج', 'المعالجة والتخزين', 'التحدي', 'تجربة الواقع المعزز', 'مساعدك الذكي', 'تقييمك النهائي '];
+    const totalPages = 13;
+    const pageNames = ['البداية', 'دليل الرحلة', 'لقاء الرحلة', 'الانطلاقة', 'اهداف الرحلة', 'اجهزة الإدخال', 'اجهزة الإخراج', 'المعالجة والتخزين', 'التحدي', 'تجربة الواقع المعزز', 'مساعدك الذكي', 'تقييمك النهائي','التحدي الاكبر'];
 
     let draggedItem = null;
     let matchedItems = new Set();
