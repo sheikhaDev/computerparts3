@@ -1056,7 +1056,7 @@ function buildQuiz(containerId, feedbackId, question) {
       if (isUser) {
         msg.textContent = text;
       } else {
-        msg.innerHTML = `<div style="font-weight: 600; margin-bottom: 4px; color: #2563EB;">🤖 المساعد</div><div>${text}</div>`;
+        msg.innerHTML = `<div style="font-weight: 600; margin-bottom: 4px; color: #2563EB;">🤖  المساعد الذكي</div><div>${text}</div>`;
       }
 
       container.appendChild(msg);
@@ -1064,91 +1064,94 @@ function buildQuiz(containerId, feedbackId, question) {
     }
 
     function getSmartReply(message) {
-      const text = message.trim().toLowerCase();
+  const text = message.trim().toLowerCase();
 
-      const responses = [
-        {
-          keys: ['مرحبا', 'اهلا', 'السلام', 'hi', 'hello'],
-          reply: 'مرحبًا بك 🌟 أنا المساعد الذكي في درس أجزاء الحاسوب. يمكنك سؤالي عن وحدات الإدخال، وحدات الإخراج، CPU، أو وحدات التخزين.'
-        },
-        {
-          keys: ['وحدات الإدخال', 'الادخال', 'أجهزة الإدخال', 'اجهزة الادخال', 'input'],
-          reply: 'وحدات الإدخال هي الأجهزة التي تستقبل البيانات من المستخدم وتدخلها إلى الحاسوب، مثل: لوحة المفاتيح، الفأرة، والميكروفون.'
-        },
-        {
-          keys: ['وحدات الإخراج', 'الاخراج', 'أجهزة الإخراج', 'اجهزة الاخراج', 'output'],
-          reply: 'وحدات الإخراج هي الأجهزة التي تعرض نتائج المعالجة للمستخدم، مثل: الشاشة، الطابعة، والسماعة.'
-        },
-        {
-          keys: ['cpu', 'المعالج', 'وحدة المعالجة', 'وحدة المعالجة المركزية'],
-          reply: 'وحدة المعالجة المركزية CPU هي دماغ الحاسوب، فهي تنفذ التعليمات وتعالج البيانات.'
-        },
-        {
-          keys: ['ram', 'الرام', 'الذاكرة العشوائية'],
-          reply: 'RAM هي الذاكرة العشوائية، وتتميز بأنها سريعة ومؤقتة، وتستخدم أثناء تشغيل البرامج.'
-        },
-        {
-          keys: ['hdd', 'ssd', 'التخزين', 'وحدات التخزين', 'القرص الصلب'],
-          reply: 'وحدات التخزين تستخدم لحفظ البيانات. منها تخزين دائم مثل HDD و SSD، وهي تختلف عن RAM لأنها تحتفظ بالبيانات لمدة أطول.'
-        },
-        {
-          keys: ['الفرق بين الإدخال والإخراج', 'الفرق بين الادخال والاخراج', 'الفرق', 'فرق'],
-          reply: 'الفرق هو أن وحدات الإدخال تدخل البيانات إلى الحاسوب، بينما وحدات الإخراج تعرض النتائج للمستخدم.'
-        },
-        {
-          keys: ['لوحة المفاتيح', 'keyboard'],
-          reply: 'لوحة المفاتيح من وحدات الإدخال، وتستخدم لكتابة الحروف والأرقام والأوامر.'
-        },
-        {
-          keys: ['الفأرة', 'الفاره', 'الماوس', 'mouse'],
-          reply: 'الفأرة من وحدات الإدخال، وتستخدم لتحريك المؤشر واختيار العناصر على الشاشة.'
-        },
-        {
-          keys: ['الميكروفون', 'microphone'],
-          reply: 'الميكروفون من وحدات الإدخال، ويستخدم لإدخال الصوت إلى الحاسوب.'
-        },
-        {
-          keys: ['الشاشة', 'monitor'],
-          reply: 'الشاشة من وحدات الإخراج، وتعرض النصوص والصور ونتائج عمل الحاسوب.'
-        },
-        {
-          keys: ['الطابعة', 'printer'],
-          reply: 'الطابعة من وحدات الإخراج، وتستخدم لطباعة المعلومات على الورق.'
-        },
-        {
-          keys: ['السماعة', 'السماعات', 'speaker'],
-          reply: 'السماعة من وحدات الإخراج، وتستخدم لإخراج الصوت للمستخدم.'
-        }
-      ];
+  if (text.includes('مرحبا') || text.includes('السلام') || text.includes('اهلا')) {
+    return 'مرحبًا بك 🌟 أنا مساعدك الذكي في درس أجزاء الحاسوب. اسألني عن أجهزة الإدخال أو الإخراج أو التخزين وسأساعدك.';
+  }
 
-      for (const item of responses) {
-        if (item.keys.some(key => text.includes(key))) {
-          return item.reply;
-        }
-      }
+  if (text.includes('ادخال') || text.includes('الإدخال') || text.includes('input')) {
+    return 'أجهزة الإدخال هي الأجهزة التي تُدخل البيانات إلى الحاسوب، مثل لوحة المفاتيح والفأرة والميكروفون.';
+  }
 
-      return 'يمكنني مساعدتك في محتوى الدرس 🌷 اسألني عن وحدات الإدخال، وحدات الإخراج، CPU، RAM، أو الفرق بين الإدخال والإخراج.';
-    }
+  if (text.includes('اخراج') || text.includes('الإخراج') || text.includes('output')) {
+    return 'أجهزة الإخراج هي الأجهزة التي تعرض النتائج للمستخدم، مثل الشاشة والطابعة والسماعة.';
+  }
+
+  if (text.includes('تخزين') || text.includes('storage') || text.includes('رام') || text.includes('ram')) {
+    return 'وحدات التخزين تحفظ البيانات. بعضُها مؤقت مثل RAM، وبعضُها دائم مثل HDD و SSD.';
+  }
+
+  if (text.includes('لوحة المفاتيح') || text.includes('keyboard')) {
+    return 'لوحة المفاتيح تُعد من أجهزة الإدخال لأنها تُستخدم لكتابة الحروف والأرقام وإرسالها إلى الحاسوب.';
+  }
+
+  if (text.includes('الفأرة') || text.includes('الماوس') || text.includes('mouse')) {
+    return 'الفأرة من أجهزة الإدخال، وتُستخدم لتحريك المؤشر واختيار الأوامر على الشاشة.';
+  }
+
+  if (text.includes('الشاشة') || text.includes('screen') || text.includes('monitor')) {
+    return 'الشاشة من أجهزة الإخراج لأنها تعرض للمستخدم النصوص والصور والنتائج.';
+  }
+
+  if (text.includes('الطابعة') || text.includes('printer')) {
+    return 'الطابعة من أجهزة الإخراج لأنها تُخرج المعلومات على الورق.';
+  }
+
+  if (text.includes('السماعة') || text.includes('speaker')) {
+    return 'السماعة من أجهزة الإخراج لأنها تُخرج الصوت للمستخدم.';
+  }
+
+  if (text.includes('ما الفرق') || text.includes('الفرق') || text.includes('فرق')) {
+    return 'الفرق هو أن أجهزة الإدخال تُدخل البيانات إلى الحاسوب، أما أجهزة الإخراج فتُظهر النتائج للمستخدم.';
+  }
+
+  if (text.includes('اختبرني') || text.includes('سؤال') || text.includes('اسالني')) {
+    const questions = [
+      'ما نوع لوحة المفاتيح: إدخال أم إخراج؟',
+      'هل الشاشة من أجهزة الإدخال أم الإخراج؟',
+      'ما الجهاز الذي نستخدمه لإدخال الصوت إلى الحاسوب؟',
+      'هل الطابعة جهاز إدخال أم إخراج؟'
+    ];
+    return 'رائع 🌟 هذا سؤالك: ' + questions[Math.floor(Math.random() * questions.length)];
+  }
+
+  return 'أفكر في سؤالك 🤖 جرب أن تسألني عن: أجهزة الإدخال، أجهزة الإخراج، التخزين، أو اطلب مني: "اختبرني".';
+}
 
     function sendChatMessage() {
-      const input = document.getElementById('chatInput');
-      const message = input.value.trim();
-      if (!message) return;
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  if (!message) return;
 
-      appendChatMessage(message, true);
+  appendChatMessage(message, true);
+  input.value = '';
 
-      setTimeout(() => {
-        const reply = getSmartReply(message);
-        appendChatMessage(reply, false);
+  const container = document.getElementById('chatContainer');
 
-        if (!chatScoreAdded) {
-          updateScore(5);
-          chatScoreAdded = true;
-        }
-      }, 350);
+  let typingMsg = document.createElement('div');
+  typingMsg.className = 'chat-bubble';
+  typingMsg.id = 'typingBubble';
+  typingMsg.innerHTML = `
+    <div style="font-weight: 600; margin-bottom: 4px; color: #2563EB;">🤖 المساعد</div>
+    <div>يكتب الآن...</div>
+  `;
+  container.appendChild(typingMsg);
+  container.scrollTop = container.scrollHeight;
 
-      input.value = '';
+  setTimeout(() => {
+    const oldTyping = document.getElementById('typingBubble');
+    if (oldTyping) oldTyping.remove();
+
+    const reply = getSmartReply(message);
+    appendChatMessage(reply, false);
+
+    if (!chatScoreAdded) {
+      updateScore(5);
+      chatScoreAdded = true;
     }
+  }, 800);
+}
 
     document.addEventListener('DOMContentLoaded', () => {
       const input = document.getElementById('chatInput');
