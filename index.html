@@ -619,14 +619,7 @@
                 <h3 class="font-bold mb-4 text-center" style="color: #2563EB;">📲 امسح رمز الاستجابة السريعة</h3>
                 <div class="flex flex-col items-center gap-6">
                   <div class="p-4 rounded-lg" style="background: white; border: 3px solid #2563EB;">
-                    <iframe src="https://mywebar.com/pi/896309"
-  frameborder="0"
-  scrolling="yes"
-  seamless="seamless"
-  style="display:block; width:100%; height:100vh;"
-  allow="camera;gyroscope;accelerometer;
-  magnetometer;xr-spatial-tracking;microphone;">
-</iframe>
+                    <img src="code.png" alt="QR Code" style="width: 200px; height: auto;">
                   </div>
 
                   <div class="w-full">
@@ -636,21 +629,32 @@
                       <div class="flex items-start gap-3 p-3 rounded-lg" style="background: rgba(37, 99, 235, 0.03);">
                         <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background: rgba(37, 99, 235, 0.15); color: #1E40AF;">①</div>
                         <div>
-                          <div class="font-bold" style="color: #2563EB;">افتح كاميرا الهاتف أو استخدم تطبيق قراءة QR Code
-</div>
-                          <div class="text-xs mt-1" style="color: #64748B;"> وجّه الكاميرا نحو الكود الظاهر أمامك</div>
-                           <div class="text-xs mt-1" style="color: #64748B;">اضغط على الرابط الذي يظهر لك</div>
-                           <div class="text-xs mt-1" style="color: #64748B;">انتظر قليلًا حتى يتم تحميل التجربة</div>
-                           <div class="text-xs mt-1" style="color: #64748B;">حرّك الهاتف لتشاهد الأجهزة أمامك في الواقع المعزز</div>
-                          <div class="text-xs mt-1" style="color: #64748B;">حرّك الهاتف لتشاهد الأجهزة أمامك في الواقع المعزز</div>
+                          <div class="font-bold" style="color: #2563EB;">افتح كاميرا الهاتف أو استخدم تطبيق قراءة QR Code</div>
                         </div>
                       </div>
 
                       <div class="flex items-start gap-3 p-3 rounded-lg" style="background: rgba(37, 99, 235, 0.03);">
                         <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background: rgba(37, 99, 235, 0.15); color: #1E40AF;">②</div>
                         <div>
-                          <div class="font-bold" style="color: #2563EB;">امسح الرمز أعلاه</div>
-                          <div class="text-xs mt-1" style="color: #64748B;">وجّه الكاميرا نحو الصورة</div>
+                          <div class="font-bold" style="color: #2563EB;">وجّه الكاميرا نحو الكود الظاهر أمامك</div>
+                        </div>
+                      </div>
+                       <div class="flex items-start gap-3 p-3 rounded-lg" style="background: rgba(37, 99, 235, 0.03);">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background: rgba(37, 99, 235, 0.15); color: #1E40AF;">②</div>
+                        <div>
+                          <div class="font-bold" style="color: #2563EB;">اضغط على الرابط الذي يظهر لك</div>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3 p-3 rounded-lg" style="background: rgba(37, 99, 235, 0.03);">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background: rgba(37, 99, 235, 0.15); color: #1E40AF;">②</div>
+                        <div>
+                          <div class="font-bold" style="color: #2563EB;">انتظر قليلًا حتى يتم تحميل التجربة</div>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3 p-3 rounded-lg" style="background: rgba(37, 99, 235, 0.03);">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background: rgba(37, 99, 235, 0.15); color: #1E40AF;">②</div>
+                        <div>
+                          <div class="font-bold" style="color: #2563EB;">تاكد ان الصوت يعمل،حرّك الهاتف لتشاهد الأجهزة أمامك في الواقع المعزز</div>
                         </div>
                       </div>
 
@@ -662,9 +666,9 @@
 <div id="quiz-box" style="margin-top:20px; text-align:center;">
   <p style="font-size:22px; font-weight:bold;">ما فائدة الأجهزة المعروضة أمامك؟</p>
 
-  <button type="button" class="quiz-btn" onclick="checkAnswer('input')"> تقوم بتنفيذ العمليات ومعالجة البيانات</button>
-  <button type="button" class="quiz-btn" onclick="checkAnswer('output')">تستقبل البيانات من المستخدم</button>
-  <button type="button" class="quiz-btn" onclick="checkAnswer('storage')">تعرض نتائج معالجة البيانات للمستخدم</button>
+  <button type="button" class="quiz-btn" onclick="checkAnswer('storage')"> تقوم بتنفيذ العمليات ومعالجة البيانات</button>
+  <button type="button" class="quiz-btn" onclick="checkAnswer('output')">تعرض نتائج معالجة البيانات للمستخدم</button>
+   <button type="button" class="quiz-btn" onclick="checkAnswer('input')">تستقبل البيانات من المستخدم</button>
 
   <p id="result" style="margin-top:15px; font-size:18px; font-weight:bold;"></p>
 </div>
