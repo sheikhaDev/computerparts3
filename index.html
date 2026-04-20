@@ -706,10 +706,10 @@ function checkAnswer(answer) {
   const result = document.getElementById("result");
 
   if (answer === "input") {
-    result.textContent = "✔️ إجابة صحيحة!";
+    result.textContent = "✔️ انت بطل، احسنت!";
     result.style.color = "green";
   } else {
-    result.textContent = "❌ إجابة غير صحيحة";
+    result.textContent = "❌ حاول مرة اخرى ، انت قريب";
     result.style.color = "red";
   }
 }
@@ -943,7 +943,7 @@ function buildQuiz(containerId, feedbackId, question) {
 
       if (selected === correct) {
         opts[selected].classList.add('correct');
-        feedback.innerHTML = '<span style="color: #059669; font-weight: 600;">✅ صحيح! +10</span>';
+        feedback.innerHTML = '<span style="color: #059669; font-weight: 600;">✅ أحسنت! أنت تسير في الطريق الصحيح في هذه الرحلة! +10</span>';
         updateScore(10);
         container.dataset.answered = 'true';
         opts.forEach(opt => opt.style.pointerEvents = 'none');
@@ -957,7 +957,7 @@ function buildQuiz(containerId, feedbackId, question) {
         }
       } else {
         opts[selected].classList.add('wrong');
-        feedback.innerHTML = '<span style="color: #DC2626;">❌ حاول مرة أخرى</span>';
+        feedback.innerHTML = '<span style="color: #DC2626;">❌ لا تقلق، التعلم يحتاج محاولة</span>';
         setTimeout(() => {
           opts[selected].classList.remove('wrong');
           feedback.classList.add('hidden');
